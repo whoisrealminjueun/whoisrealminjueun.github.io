@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "👍"
+date:   2023-06-04
+last_modified_at: 2023-06-04
+categories: [daytoday!]
+---
+
+![image](https://raw.githubusercontent.com/whoisrealminjueun/whoisrealminjueun.github.io/master/_posts/assets/images/64a6c8320a0cbe2424095108_KakaoTalk_20230706_225640324.jpg)
