@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="288pt" height="288pt" viewBox="0 0 288 288">
+<defs>
+<clipPath id="clip_0">
+<path transform="matrix(1,0,0,-1,0,288)" d="M0 0H288.007V288.007H0Z"/>
+</clipPath>
+</defs>
+<g>
+<g>
+<g clip-path="url(#clip_0)">
+<path transform="matrix(1,0,0,-1,0,288)" d="M0 0H288.007V288.007H0Z" fill-opacity="0"/>
+</g>
+</g>
+<text fill="#ffffff" xml:space="preserve" transform="matrix(1 0 -0 1 0 288)" font-size="150.6505" font-family="Fit"><tspan y="-86.7561" x="15.7311 58.063898 73.128948 101.75254 129.92418 158.54778 186.87007 215.49367 244.11727">MinJueun?</tspan></text>
+</g>
+</svg>

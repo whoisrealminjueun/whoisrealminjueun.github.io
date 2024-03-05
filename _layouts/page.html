@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<style>
+  .container-post {
+    /* Add other styles as needed for the post container */
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+
+  .post-title {
+    text-align: left; /* Align post title to the left */
+  }
+
+  .post-content {
+    text-align: left; /* Align post content to the left */
+  }
+
+  .post-info {
+    color: #555; /* Set text color to a lighter gray */
+    text-align: left; /* Align post info to the left */
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+
+  .post-date {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+
+  .post-categories {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    color: white; /* Set text color to white */
+    text-align: left; /* Align categories to the left */
+  }
+
+  .post-category {
+    margin-right: 10px; /* Adjust the margin between categories as needed */
+  }
+
+  .post-separator {
+    border-top: 1px solid #ddd; /* Border color for the separator */
+    margin-top: 20px; /* Margin at the top of the separator */
+    margin-bottom: 20px; /* Margin at the bottom of the separator */
+  }
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white; /* Button background color */
+    color: black; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+  }
+</style>
+<article class="container-page">
+  <div class="page-content">
+    {{ content }}
+  </div>
+</article>

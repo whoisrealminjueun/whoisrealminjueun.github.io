@@ -1,0 +1,141 @@
+---
+layout: default
+---
+
+<style>
+
+  .container-post {
+    /* Add other styles as needed for the post container */
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+
+  .post-title {
+    text-align: left; /* Align post title to the left */
+  }
+
+  .post-content {
+    text-align: left; /* Align post content to the left */
+  }
+
+  .post-info {
+    color: #555; /* Set text color to a lighter gray */
+    text-align: left; /* Align post info to the left */
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+
+  .post-date {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+
+  .post-categories {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    color: white; /* Set text color to white */
+    text-align: left; /* Align categories to the left */
+  }
+
+  .post-category {
+    margin-right: 10px; /* Adjust the margin between categories as needed */
+  }
+
+  .post-separator {
+    border-top: 1px solid #ddd; /* Border color for the separator */
+    margin-top: 20px; /* Margin at the top of the separator */
+    margin-bottom: 20px; /* Margin at the bottom of the separator */
+  }
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white; /* Button background color */
+    color: black; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+  }
+</style>
+<script type="text/javascript">
+		var omitformtags=["input", "textarea", "select"]
+		omitformtags=omitformtags.join("|")
+		function disableselect(e){
+		if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+		return false
+		}
+		function reEnable(){
+		return true
+		}
+		if (typeof document.onselectstart!="undefined")
+		document.onselectstart=new Function ("return false")
+		else{
+		document.onmousedown=disableselect
+		document.onmouseup=reEnable
+		}
+	</script>
+
+
+<article class="container-post">
+  <div class="post-title">
+    <h1>{{ page.title }}</h1>
+  <div class="post-content">
+    {{ content }}
+  </div>
+  <div class="post-info">
+    <div class="post-date">
+      {{ site.data.lang[site.language].post_write_date }}{{ page.date | date: "%Y-%m-%d" }}{% if page.last_modified_at %}, {{ site.data.lang[site.language].post_update_date }}{{ page.last_modified_at | date: "%Y-%m-%d" }}{% endif %}.
+    </div>
+    <div class="post-categories">
+      <span>{{ site.data.lang[site.language].post_categories }}</span>
+      {% for category in page.categories %}
+        <a href="{{ site.baseurl }}/category/{{ category | slugify }}" class="post-category" onclick="redirectToCategories()"> {{ category }}</a>
+      {% endfor %}
+    </div>
+    <script>
+      function redirectToCategories() {
+        window.location.href = "https://whoisrealminjueun.netlify.app/categories/";
+      }
+    </script>
+  </div>
+  <div class="post-separator"></div> <!-- Separator -->
+  <div class="post-tools">
+    <div class="post-navigation">
+      {% if page.previous %}
+        <div class="post-previous">
+          <span>{{ site.data.lang[site.language].post_previous }}</span><a href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a>
+        </div>
+      {% endif %}
+      {% if page.next %}
+        <div class="post-next">
+          <span>{{ site.data.lang[site.language].post_next }}</span><a href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% if site.comments %}
+    {% include comments.html %}
+  {% endif %}
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+  <script>
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    // Show/hide the scroll-to-top button based on scroll position
+    window.onscroll = function () {
+      var scrollButton = document.querySelector('.scroll-to-top');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollButton.style.display = "block";
+      } else {
+        scrollButton.style.display = "none";
+      }
+    };
+  </script>
+</article>
