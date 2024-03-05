@@ -1,0 +1,68 @@
+<style>
+  .header-info h6 {
+    font-size: 8px; 
+    white-space: nowrap;
+    cursor: pointer; 
+  }
+
+  
+  @media only screen and (max-width: 760px) {
+    .header-info h6 {
+      font-size: 6px; 
+    }
+
+  @media only screen and (max-width: 320px) {
+    .header-info h6 {
+      font-size: 4px;
+    }
+  }
+</style>
+
+<div class="header-info">
+  <h6 id="homeLink">                                                                                              
+      uQgZgZDZDZDEgQ XMgQ.7RDZgEDDQ JQMZgZDDQ dgMD ERgD ggDEgEDgX QgR2 QMMu QDDZgEgMY QDDEgEgQu     <br>
+      QBBBBBBBQBBBBB BQBB.5BBBBBQBQ.BBBBBBBBQ BBBB BBBB BBBBBBBBB BBBB BBBQ BBBBBBBBE BBBBBBBBR     <br>
+      PQBQuPBQBrBBBB QBBB YBBBLEBQB .v7rrBBBB BBBB BBBB BBBBrBBQM BBBd QBBq BBBgvBBB2 BBBPuBBBP     <br>
+      qBBB iQBB dBBB RBBB 7BBB vBBQ rgEg gQBB QBBB BQBB BBQB BBBZ BBBd BBBS BBBu BBBu BBBi BBBq     <br>
+      PBBB.7BBB gQBB MBQB vBBB sBQB qBBB gBBB BQBB BBBB BBBB BBBg BBBP QBBX BBB2 BBBU BBB7.BBBP     <br>
+      KBBB.7BBQ gBBB RBBB 7BQB JBBB UBBB MQBB QBBB BBBB BBBB BBBD BBBd BQB5 BBBS BQB1 BBBv BBBK     <br>
+      PQBB.7BBB gBBB gBBB vBBB sBBB 2BBB gBBB BBBB BBBB BBBB BBBg BBBP BBQK BBBI BBB2 BBB7.BBBP     <br>
+      KBBB.7BBB DBBB MBBB 7BQB jQBB UBBB RBBB QBBB BQBQ BBBB BBBD BBBE BBB5 BBQS BBB1 BBBv BBBq     <br>
+      PQBQ.7BBB gBBB gBBB LBBB JBBB 2BBQ gBBB BQBB BBBB BBBB QBBg BBBP QBBK BQBI BBB2 BBB7.BBBP     <br>
+      qBBB vBBB gBBB RBBQ vBBB uBBB 1BBB MBBB QBBB BBBB BBBB BBBZ BBBd BBB5 BBB5 BBB1 BBBv BQBK     <br>
+      PBBQ.7BBB gBBB gBBB vBBB sBBB 2QBB gBBB BBBB BBBB BBBB BBBg BBBP BBBK BBBI BBQ2 BBB7.BBBP     <br>
+      qBBB.7QBB DBBB RBBB 7BBB uBBQ 1BBB RBBB QBBB BBBB BBBB BBBZ BBBb BBBS QBBS BBBu BBBv BBBq     <br>
+      PBBB.7BBB MBBB MBBB LBBB JBBB 2BBB gBBB BBBB QBBB BBBB BBBg BBBP BBBK BQBI BBB2 BBB7.BBQP     <br>
+      qBBB.vBBQ DBQB RBBB 7BBB JBBB 1BBB MBBB QBBB BBBB BBBB BQBZ BBBE BBB5 BBBS BBB1 BBB7 BBBq     <br>
+      PQBB.7BBB gBBB gBQB vBBQ sBBB 2BBB gBBB BBBB BBBB BQBQ BBBD BQBP BBBX BBB5 BBB2 BBB7.BBBP     <br>
+      qBBB 7BBB DBBB RQBQ vBBB uBBB 1BQB RBBB QBBB BBBQ BBBB BQBD BBBb BBBS BBB5 BQBu BBBv BBBK     <br>
+      PBBB.7BBB MBBB gBBB LBBQ sBBB IBBB gBBB BBBB BBBB BBBQ QBBB BBBP BBQK BBBI BBB2 BBBr BBBb     <br>
+      qBBB 7QBB gBBB RBBB vBBB JQBB UBBB MBBB QBBB BBBB BBQB ir7: BBBE BQBS QBQS BBBS ri:.rBBBD     <br>
+      PBBB.7BBB gBBB MBQB LBBB JBBB 2BBQ gBBB QQBB BBBB BBBQBRQQK BBBP BBBX BQBI QBB2 BQBBBBBB:     <br>
+      qBBB.7BBB gBBB RBBQ vBBB JBBB UBBB gBBB QBBB BBBB BBBBBBQBQ BBBP BBBS BBBS BBBI BQMBBBg.      <br>
+      PBBB.7BQB RBBB MBBB LBBB JBBB IQBB.MBBB BBBQ BBBB BQBQi::i. BBBb.QBBq BBBS BBBX vr7:          <br>
+      ZBBB.uBBB QBQB BBBB.uBBB XBBQ PBBBBBBBB QBBBQBBBB BBBBBBBBQ BBBBQBBBE BBBE BBBK.BBBB          <br>
+      gBBB:UBQB BBBQ BBQB.5BBB.qBQB.EBBBBQB1B BBBBBBBBB BBBBBBBBB BBBBBBBBg BBBZ.BBBb.BQBB     <br>  
+  <span class="header-info-desc">{{ site.description }}</span>
+</div>
+<div class="header-container" style="width: 100%; display: flex; justify-content: space-between;">
+  <nav class="header-nav">
+    <ul class="header-main-nav">
+      {% for item in site.data.menus %}
+        <li class="header-main-nav-item"><a href="{% if item.absoluteUrl != true %}{{ site.baseurl }}/{% endif %}{{ item.url }}">{% if item.default %}{{ site.data.lang[site.language][item.default] }}{% else %}{{ item.title }}{% endif %}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- 추가된 부분: /search 페이지로 갈 수 있는 버튼 (오른쪽 정렬) -->
+  <ul class="header-main-nav" style="float: right;">
+    <li class="header-main-nav-item"><a href="{{ site.baseurl }}/search">Search</a></li>
+  </ul>
+</div>
+
+<script>
+  // JavaScript 이벤트 리스너 추가
+  document.getElementById("homeLink").addEventListener("click", function() {
+    window.location.href = "{{ site.baseurl }}/";
+  });
+</script>
