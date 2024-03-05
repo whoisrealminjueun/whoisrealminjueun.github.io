@@ -12,11 +12,6 @@ analytics:   # the Google Analytics property ID, e.g. UA-XXXXX-Y
 paginate: 25
 paginate_path: "/page:num/"
 
-comments: false # enable comments
-disqus: # disqus account
-
-futrue: true
-
 permalink: /:year/:month/:day/:title
 
 sass:
