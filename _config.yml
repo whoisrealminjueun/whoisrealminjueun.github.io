@@ -1,0 +1,61 @@
+title: whoisrealminjueun?
+name: whoisrealminjueun?
+description: >- # this means to ignore newlines until "baseurl:"
+keywords: [Your keywords]
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://whoisrealminjueun.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
+language: en
+timezone: Asia/Seoul
+
+analytics:   # the Google Analytics property ID, e.g. UA-XXXXX-Y
+
+paginate: 25
+paginate_path: "/page:num/"
+
+comments: false # enable comments
+disqus: # disqus account
+
+futrue: true
+
+permalink: /:year/:month/:day/:title
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:
+  blogposts:
+    output: true
+    permalink: /_blogposts/
+  docs:
+    output: true
+    permalink: /_search/
+
+# Category settings
+category archive:
+  type: liquid
+  path: /category
+  
+jekyll-archives:
+  enabled: 
+    - categories
+  layout: archive
+  permalinks:
+    category: /category/:name/
+    
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
