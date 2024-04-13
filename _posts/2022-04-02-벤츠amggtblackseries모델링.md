@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "벤츠amggtblackseries모델�?
+title:  "벤츠amggtblackseries모델링"
 date:   2022-04-02
 last_modified_at: 2022-04-02
-category: [VISUALDESIGN]
+categories: [VISUALDESIGN]
 ---
 
 ![image](https://github.com/whoisrealminjueun/images/blob/main/Amggtblackseries/blender-20231231-124140-000-resize.jpg?raw=true)
