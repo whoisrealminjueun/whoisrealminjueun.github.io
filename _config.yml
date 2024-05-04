@@ -3,7 +3,7 @@ name: whoisrealminjueun?
 description: >- # this means to ignore newlines until "baseurl:"
 keywords: [Your keywords]
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://whoisrealminjueun.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://whoisrealminjueun.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 language: en
 timezone: Asia/Seoul
 
