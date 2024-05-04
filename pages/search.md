@@ -18,7 +18,7 @@ permalink: /search
 
 #search-input::placeholder {
   font-size: 16px;        /* 검색 바의 임시 텍스트 크기 조절 */
-  color: white;           /* 임시 텍스트 색상 설정 */
+  color: grey;           /* 임시 텍스트 색상 설정 */
 }
 
 #search-input:focus {
