@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "오딘썸네일"
+title:  "goodbye adobe!"
 date:   2024-05-05
 last_modified_at: 2024-05-05
 categories: ["VISUALDESIGN", "daytoday"]
