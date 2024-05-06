@@ -10,10 +10,6 @@
 - title: "2048"
   url: "2048"
   
-- title: "instagram"
-  absoluteUrl: true
-  url: "https://www.instagram.com/whoisrealminjueun/"
-
 - title: "app"
   absoluteUrl: true
   url: "https://mega.nz/file/sL9QyRCa#Fk2D86LNPFbgXLYgFEbztoxZisk8EsxaIpF2v9z8l_I"
