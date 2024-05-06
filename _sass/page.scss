@@ -7,3 +7,13 @@
 .page-content p {
   line-height: 20px;
 }
+
+.clearfix::ater {
+
+content:"";
+
+display:block;
+
+clear:both;
+
+}
