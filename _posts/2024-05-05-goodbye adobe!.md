@@ -3,7 +3,7 @@ layout: post
 title:  "goodbye adobe!"
 date:   2024-05-05
 last_modified_at: 2024-05-05
-categories: ["VISUALDESIGN", "daytoday"]
+categories: ["VISUALDESIGN", "daytoday!"]
 ---
 
 2020년 6월 7일 부터 3년 11개월을 사용했던 어도비 포토샵을 취소했다.
