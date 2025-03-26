@@ -31,18 +31,3 @@ layout: default
     {% endfor %}
   </ul>
 </article>
-
-<script>
-  // 페이지가 로드되면 실행
-  document.addEventListener("DOMContentLoaded", function () {
-    // .toggle-category 클래스가 붙은 요소(카테고리 제목들) 모두 찾기
-    document.querySelectorAll(".toggle-category").forEach(category => {
-      category.addEventListener("click", function () {
-        // 바로 다음 요소(= .posts-list) 선택
-        let postList = this.nextElementSibling;
-        // hidden 클래스를 토글하여 보였다/숨겼다
-        postList.classList.toggle("hidden");
-      });
-    });
-  });
-</script>
