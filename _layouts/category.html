@@ -7,9 +7,11 @@ layout: default
   <ul class="categories-list">
     {% for category in site.categories %}
     <li id="{{ category | first }}">
+      <!-- 카테고리 이름 클릭 시, 목록이 토글되도록 -->
       <h2 class="category-name toggle-category">
         <strong>{{ category | first }}</strong>
       </h2>
+      <!-- 처음엔 hidden 클래스로 숨김 처리 -->
       <div class="posts-list hidden">
         {% assign sorted_posts = site.posts | sort: 'date' %}
         {% for post in sorted_posts %}
@@ -31,15 +33,15 @@ layout: default
 </article>
 
 <script>
+  // 페이지가 로드되면 실행
   document.addEventListener("DOMContentLoaded", function () {
+    // .toggle-category 클래스가 붙은 요소(카테고리 제목들) 모두 찾기
     document.querySelectorAll(".toggle-category").forEach(category => {
       category.addEventListener("click", function () {
+        // 바로 다음 요소(= .posts-list) 선택
         let postList = this.nextElementSibling;
-        if (postList.classList.contains("hidden")) {
-          postList.classList.remove("hidden");
-        } else {
-          postList.classList.add("hidden");
-        }
+        // hidden 클래스를 토글하여 보였다/숨겼다
+        postList.classList.toggle("hidden");
       });
     });
   });
