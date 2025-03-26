@@ -11,22 +11,21 @@
 }
 
 .categories-list li h2 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 
-.category-list-item {
-  display: block;
-  position: relative;
-  margin: 7px 0;
-  overflow: hidden;
-  line-height: 24px;
+.posts-list {
+  margin-top: 10px;
 }
 
-.category-list-item-name {
-  width: calc(100% - 100px);
-  font-weight: 300;
+.hidden {
+  display: none;
 }
