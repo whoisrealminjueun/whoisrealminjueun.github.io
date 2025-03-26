@@ -10,11 +10,13 @@
   list-style-type: none;
 }
 
-.category-name {
+.categories-list li h2 {
   font-size: 1.5em;
   font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
 }
-
 
 .category-list-item {
   display: block;
