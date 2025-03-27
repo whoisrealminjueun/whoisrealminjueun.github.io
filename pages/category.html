@@ -35,7 +35,8 @@ permalink: /category/
   <h1 class="page-title">{{ site.data.lang[site.language].categories_title }}</h1>
   <ul class="categories-list">
     {% for category in site.categories %}
-    <li id="{{ category | first | slugify: 'pretty' }}">
+    <!-- id에 slugify 대신 공백을 하이픈으로 치환 -->
+    <li id="{{ category | first | replace: ' ', '-' }}">
       <h2 class="category-name toggle-category">
         <strong>{{ category | first }}</strong>
       </h2>
@@ -61,7 +62,7 @@ permalink: /category/
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // 기본 토글 기능: 클릭 시 포스트 목록을 보이거나 숨김 처리
+    // 기본 토글 기능: 클릭 시 해당 목록 보이기/숨기기
     document.querySelectorAll(".toggle-category").forEach(function (element) {
       element.addEventListener("click", function () {
         var postList = this.nextElementSibling;
@@ -73,26 +74,26 @@ permalink: /category/
       });
     });
 
-    // 해시값에 따른 자동 토글 함수
+    // URL 해시에 따른 자동 토글 기능
     function toggleCategoryFromHash() {
-      var hash = window.location.hash;
+      // decodeURIComponent를 사용해 percent-encoded 해시를 원래 문자열로 복원
+      var hash = decodeURIComponent(window.location.hash);
       if (hash) {
-        var id = hash.substring(1);  // '#' 제거
+        // '#' 제거
+        var id = hash.substring(1);
         var targetCategory = document.getElementById(id);
         if (targetCategory) {
           var postList = targetCategory.querySelector(".posts-list");
           if (postList) {
-            // hidden 클래스 제거
             postList.classList.remove("hidden");
-            // inline 스타일 display를 block으로 설정
             postList.style.display = "block";
           }
-          // 해당 카테고리로 스크롤 이동
+          // 해당 카테고리로 스크롤 이동 (선택 사항)
           targetCategory.scrollIntoView();
         }
       }
     }
-    // 약간의 지연 후에 실행
+    // DOM이 완전히 로드된 후 실행
     setTimeout(toggleCategoryFromHash, 100);
   });
 </script>
