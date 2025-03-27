@@ -85,12 +85,14 @@ layout: default
     <div class="post-date">
       {{ site.data.lang[site.language].post_write_date }}{{ page.date | date: "%Y-%m-%d" }}{% if page.last_modified_at %}, {{ site.data.lang[site.language].post_update_date }}{{ page.last_modified_at | date: "%Y-%m-%d" }}{% endif %}.
     </div>
-    <div class="post-categories">
-      <span>{{ site.data.lang[site.language].post_categories }}</span>
-      {% for category in page.categories %}
-        <a href="{{ site.baseurl }}/category/{{ category | slugify }}" class="post-category" onclick="redirectToCategories()"> {{ category }}</a>
-      {% endfor %}
-    </div>
+    <div class="post-categories"> 
+  <span>{{ site.data.lang[site.language].post_categories }}</span> 
+  {% for category in page.categories %} 
+    <a href="{{ site.baseurl }}/category/#{{ category | slugify }}" class="post-category">
+      {{ category }}
+    </a> 
+  {% endfor %}
+</div>
     <script>
       function redirectToCategories() {
         window.location.href = "https://whoisrealminjueun.github.io/categories/";
