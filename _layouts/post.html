@@ -88,8 +88,8 @@ layout: default
     <div class="post-categories">
   <span>{{ site.data.lang[site.language].post_categories }}</span>
   {% for category in page.categories %}
-    <!-- 링크에 동일한 방식으로 id 생성 -->
-    <a href="{{ site.baseurl }}/category/#{{ category | slugify: 'pretty' | replace: ' ', '-' }}" class="post-category">
+    <!-- 링크 생성 시에도 소문자로 변환 -->
+    <a href="{{ site.baseurl }}/category/#{{ category | replace: ' ', '-' | downcase }}" class="post-category">
       {{ category }}
     </a>
   {% endfor %}
