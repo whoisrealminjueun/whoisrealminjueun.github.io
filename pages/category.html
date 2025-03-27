@@ -4,66 +4,43 @@ title: Category
 permalink: /category/
 ---
 
-<article class="container-page">
-  <h1 class="page-title">{{ site.data.lang[site.language].categories_title }}</h1>
-  <ul class="categories-list">
-    {% for category in site.categories %}
-    <li id="{{ category | first | slugify }}">
-      <h2 class="category-name toggle-category">
-        <strong>{{ category | first }}</strong>
-      </h2>
-      <div class="posts-list hidden">
-        {% assign sorted_posts = site.posts | sort: 'date' %}
-        {% for post in sorted_posts %}
-          {% if post.categories contains category[0] %}
-            <div class="posts-list-item">
-              <span class="posts-list-item-name float-left">
-                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-              </span>
-              <span class="posts-list-item-date float-right">
-                {{ post.date | date: "%Y-%m-%d" }}
-              </span>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-</article>
-
 <script>
-  // 해당 해시에 맞는 카테고리를 자동으로 펼치는 함수
   function toggleCategoryByHash() {
+    console.log("toggleCategoryByHash called");
     var hash = window.location.hash;
+    console.log("hash:", hash);
     if (hash) {
-      // '#' 제거
       var targetId = hash.substring(1);
+      console.log("targetId:", targetId);
       var targetCategory = document.getElementById(targetId);
+      console.log("targetCategory:", targetCategory);
       if (targetCategory) {
         var postList = targetCategory.querySelector(".posts-list");
+        console.log("postList:", postList);
         if (postList && postList.classList.contains("hidden")) {
+          console.log("Removing 'hidden' class from the posts-list");
           postList.classList.remove("hidden");
+        } else {
+          console.log("posts-list is already visible or not found.");
         }
+      } else {
+        console.log("No element found with id:", targetId);
       }
     }
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    // 클릭 시 토글 기능
+    // 카테고리 제목 클릭 시 토글
     document.querySelectorAll(".toggle-category").forEach(function(category) {
       category.addEventListener("click", function () {
         let postList = this.nextElementSibling;
         postList.classList.toggle("hidden");
       });
     });
-
-    // 페이지 로드시 해시값 체크
-    toggleCategoryByHash();
+    // DOMContentLoaded 후 100ms 후에 해시값 확인
+    setTimeout(toggleCategoryByHash, 100);
   });
 
-  // 해시값이 바뀔 때마다 처리
-  window.addEventListener("hashchange", function() {
-    toggleCategoryByHash();
-  });
+  // 해시값 변경 시에도 실행
+  window.addEventListener("hashchange", toggleCategoryByHash);
 </script>
