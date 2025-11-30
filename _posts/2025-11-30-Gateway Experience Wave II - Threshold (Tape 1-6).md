@@ -14,40 +14,43 @@ Well now that you are indeed on the threshold of the wave of change, it seems li
 자, 이제 여러분은 진정으로 변화의 물결 그 문턱에 서 있습니다. 믿음이나 희망 대신 '아는 것(knowns)'에 대한 몇 가지 흥미로운 점을 짚고 넘어가는 것이 좋을 것 같습니다.<br><br>
 
 First of all, these exercises are only tools for you to learn and use. As such, they do not create change in you. Only you can change you.<br>
-우선, 이 연습들은 여러분이 배우고 사용하기 위한 도구일 뿐입니다. 따라서 도구 자체가 여러분을 변화시키지는 않습니다. 오직 당신만이 당신을 변화시킬 수 있습니다.<br><br>
+우선, 이 과정은 여러분들이 배우고 사용하기 위한 것 입니다. 또한 이러한 도구 자체가 홀로 여러분을 변화시키지는 않습니다. 오직 당신 자신이 당신을 변화시킬 수 있습니다.<br><br>
 
 With these tools you can affect many changes all under your control, what changes you make are up to you, entirely your own decision and no one else.<br>
-이 도구들을 사용하여 당신의 통제 하에 많은 변화를 일으킬 수 있지만, 어떤 변화를 만들지는 전적으로 당신에게 달려 있으며, 오직 당신만의 결정입니다.<br><br>
+당신의 통제 하에, 이 도구들을 사용하여 많은 변화를 일으킬 수 있습니다. 다만 어떠한 변화를 만들지는 전적으로 오직 당신의 결정에 달려 있습니다.<br><br>
 
 No one else is as capable as you in making decisions that deeply effect you, because no one, absolutely no one, knows you better than you.<br>
-당신에게 깊은 영향을 미치는 결정을 내리는 데 있어 당신만큼 유능한 사람은 없습니다. 왜냐하면 아무도, 절대 그 누구도 당신보다 당신을 더 잘 알지 못하기 때문입니다.<br><br>
+당신에게 깊은 영향을 줄 결정을 내리는 대에, 당신만큼 뛰어난 사람은 없습니다. 왜냐하면 아무도, 전적으로 당신을 당신보다 잘 알지는 못하기 때문입니다.<br><br>
 
 At this point you probably believe or hope that you truly are more than your physical body. The interesting question is how much more are you.<br>
-이 시점에서 여러분은 아마도 자신이 육체 그 이상이라는 것을 믿거나 희망하고 있을 것입니다. 흥미로운 질문은 '얼마나 더 큰 존재인가'입니다.<br><br>
+이 시점에서 당신은 아마도 당신이 단지 육체적 몸 이상임을 믿거나 기대할 것 입니다. 또한 가장 흥미로운 궁금증은 과연 어느정도로 육체적 몸을 벗어났는지에 관한 질문 입니다. <br><br>
 
 Whatever you believe, consider the possibility that the more is far greater than you've ever imagined or dreamed.<br>
-당신이 무엇을 믿든, 그 '더 큰 존재'가 당신이 상상하거나 꿈꿔왔던 것보다 훨씬 더 거대할 가능성을 고려해 보십시오.<br><br>
+당신이 무엇을 믿든, 그것이 당신이 꿈꾸고, 상상헀던 범위를 아득히 넘어설 가능성을 고려해보십시오.<br><br>
 
 So, you can use these exercise tools to reduce such beliefs into knowns. Use them and you're on the threshold of knowing you are more, and how much greater you are than mere physical matter.<br>
-그러니 이 연습 도구들을 사용하여 그러한 믿음을 '아는 것(지식)'으로 바꾸십시오. 그것들을 사용하면 당신은 자신이 더 큰 존재라는 것, 그리고 단순한 물리적 물질보다 얼마나 더 위대한 존재인지를 '아는' 문턱에 서게 됩니다.<br><br>
+이제, 이 연습 도구들을 사용하여 이러한 믿음을 '아는 것'으로 바꾸십시오.(체화하십시오.) 도구들을 사용하며 당신은 자신이 그 이상의 존재라는것, 그리고 단순한 물리적 물질보다 얼마나 더 위대한 존재인지를 '아는' 문턱에 서게 됩니다.<br><br>
 
 Someone can tell you and you can read about it and you can believe it, but that's not enough. The only way is to find out for yourself. Then you know.<br>
-누군가 당신에게 말해줄 수도 있고, 책에서 읽을 수도 있고, 믿을 수도 있지만, 그것만으로는 충분하지 않습니다. 유일한 방법은 스스로 알아내는 것입니다. 그러면 알게 됩니다.<br><br>
+누군가로부터 당신은 들을 수도 있으며, 읽을 수도 있고, 믿을 수도 있습니다. 하지만 충분치 않습니다. 유일한 방법은 당신 스스로 찾아내는 것입니다. 그러면 알게 됩니다.<br><br>
 
-And that's what produces the changes. Use and practice these exercises. They can help you do this as they have for many before you. Well that's enough, let's get started on the action.<br>
-바로 그것이 변화를 만들어냅니다. 이 연습들을 사용하고 실천하십시오. 이전에 많은 사람들에게 그랬듯이 이 도구들이 당신을 도울 것입니다. 자, 설명은 이쯤 하고 실행으로 들어가 봅시다.<br><br>
+And that's what produces the changes. Use and practice these exercises. They can help you do this as they have for many before you.<br>
+또한 그것이 변화를 만듭니다. 이 연습들을 실천하고 사용해보십시오. 이전의 수 많은 사람들과 마찬가지로 이 모든 과정은 당신을 도울 것 입니다.<br><br>
+
+Well that's enough, let's get started on the action.<br>
+자, 이정도면 충분합니다. 이제 시작해봅시다.<br><br>
 
 .............................. [Surf Sounds] .............................<br>
 .............................. [파도 소리] .............................<br><br>
 
 Move now into your preparatory process. First, your energy conversion box, use this. Then follow with your resonant tuning. Find next, your resonant energy balloon. Then start your affirmation beginning, "I am more than my physical body." Then go on to Focus 10 and I will join you there.<br>
-이제 준비 과정으로 들어갑니다. 먼저, '에너지 변환 상자'를 사용하십시오. 그 다음 '공명 조율'을 하십시오. 이어서 '공명 에너지 풍선'을 찾으십시오. 그리고 "나는 육체 그 이상이다"로 시작하는 '확언'을 시작하십시오. 그 후 Focus 10으로 이동하면 제가 그곳에서 합류하겠습니다.<br><br>
+이제 준비 과정으로 들어갑니다. 먼저, 'energy conversion box'를 사용하십시오. 그 다음 'resonant tuning'을 하십시오. 이어서 'resonant energy balloon'을 찾으십시오. 그리고 "I am more than my physical body."로 시작하는 '확언'을 시작하십시오. 그 후 Focus 10으로 이동하면 제가 그곳에서 합류하겠습니다.<br><br>
 
 Now from Focus 10 you are going to learn to move to a different state of conscious awareness. That state is called Focus 12.<br>
-이제 Focus 10에서 다른 의식 상태로 이동하는 법을 배우게 될 것입니다. 그 상태는 Focus 12라고 불립니다.<br><br>
+이제 Focus 10에서 다른 의식 상태로 이동하는 법을 배우게 될 것입니다. Focus 12라고 불리는 상태로.<br><br>
 
 Focus 12, where your consciousness has moved far beyond the limits of your physical body. Far beyond the limits of physical awareness where you can perceive and understand in ways far beyond the limitations of physical matter.<br>
-Focus 12는 당신의 의식이 육체의 한계를 훨씬 넘어선 상태입니다. 물리적 인식의 한계를 훨씬 넘어, 물리적 물질의 제약을 초월한 방식으로 지각하고 이해할 수 있는 곳입니다.<br><br>
+Focus 12는 당신의 의식이 육체작작 한계를 훨씬 넘어선 상태입니다. 물리적 인식의 한계를 훨씬 넘어, 물리적 물질의 제약을 초월한 방식으로 지각하고 이해할 수 있는 곳입니다.<br><br>
 
 To reach Focus 12, all you need do is count slowly in your mind from 10 to 12. And when you reach the count of 12, you will be in Focus 12 where your awareness is expanded far beyond the limits of the physical body. Far beyond the limits of physical matter.<br>
 Focus 12에 도달하기 위해 당신이 해야 할 일은 마음속으로 10에서 12까지 천천히 세는 것뿐입니다. 12를 세게 되면, 당신은 의식이 육체의 한계를 훨씬 넘어 확장된 상태인 Focus 12에 있게 됩니다. 물질의 한계를 훨씬 넘어서 말이죠.<br><br>
