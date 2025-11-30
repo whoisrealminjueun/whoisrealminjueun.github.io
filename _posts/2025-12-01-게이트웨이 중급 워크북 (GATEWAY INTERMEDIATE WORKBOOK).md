@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "게이트웨이 중급 워크북"
+title:  "게이트웨이 중급 워크북 (GATEWAY INTERMEDIATE WORKBOOK)"
 date:   2025-12-01
 last_modified_at: 2025-12-01
 categories: ["MEDITATION"]
