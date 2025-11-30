@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "THRESHOLD TAPE #1 - Introduction to Focus 12 (포커스 12 소개)"
+title:  "WAVE II, THRESHOLD TAPE #1 - Introduction to Focus 12 (포커스 12 소개)"
 date:   2025-11-30
 last_modified_at: 2025-11-30
 categories: ["MEDITATION"]
