@@ -6,7 +6,6 @@ last_modified_at: 2025-11-30
 categories: ["MEDITATION"]
 ---
 
-# 게이트웨이 중급 워크북 (GATEWAY INTERMEDIATE WORKBOOK)
 #### MONROE INSTITUTE OF APPLIED SCIENCES
 
 ---------------------------------------
