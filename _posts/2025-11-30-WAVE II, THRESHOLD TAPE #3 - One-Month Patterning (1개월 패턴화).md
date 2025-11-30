@@ -6,7 +6,6 @@ last_modified_at: 2025-11-30
 categories: ["MEDITATION"]
 ---
 
-THRESHOLD TAPE #3 - One-Month Patterning (1개월 패턴화)
 Move now into your preparatory process. (Standard Prep).<br>
 준비 과정으로 들어갑니다. (기본 준비 과정).<br><br>
 Move now to Focus 12 by the method you have learned... Do this now.<br>
