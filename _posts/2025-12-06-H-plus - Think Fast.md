@@ -2,7 +2,7 @@
 layout: post
 title:  "H-plus - Think Fast"
 date:   2025-12-06
-last_modified_at: 2025-12-06
+last_modified_at: 2026-04-07
 categories: ["MEDITATION"]
 ---
 
