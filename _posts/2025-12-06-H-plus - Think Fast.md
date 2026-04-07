@@ -6,13 +6,13 @@ last_modified_at: 2025-12-06
 categories: ["MEDITATION"]
 ---
 
-제가 가장 좋아하는 테이프중 하나인, Think Fast 번역입니다. 큰 도움을 받았고 인지적 명료함에 대한 확신 배울 수 있었습니다.<br><br>
+Robert Monroe 박사가 가장 진보된 버전의 Hemi-Sync라고 부른 H-plus 시리즈의 Think Fast 테이프입니다. 사실 저는 Gateway Tape를 Wave iv까지 진행하면서도, 어떤 명상적인 문화에 빠짐을 '상상하는' 수준에 머물렀고, 실질적인 일상에서의 효과를 크게 확신하지도 않았습니다. 그냥 특이한 무언가를 한번쯤 해보고자 하는 호기심에 가깝고, 영적인 요소는 여러 이유들로 인해 경계해왔습니다. 하지만 Think Fast는 수능을 준비하는 수험생 입장에서 실질적인 개선을 체감했고, Hemi-Sync중, 유일하게 주기적으로 하는 테이프입니다. Monroe 박사가 주장하는대로, 상위 단계의 세계에서 우주적 '나'로부터 주파수로의 정보들에 접속하는 형태가 아니더라도, 단지 눈을 감고 몸의 힘을 빼 30분간 열정적으로 아무것도 하지 않는 그 자체로도 세상을 바라보는 관점과 기다림에 직면하는 태도가 달라집니다. 특히 ADHD라서 그런지...ㅋㅋㅋㅋ 또 뇌파동조와 같은 원리가 실증적으로 증명되지 않았더라도, 무의식적인 측면에서 '이걸 하면 더 빨리 생각할 수 있다'라는 각인은 효과가 있습니다. 정말로요.. 한번 해 보세요.<br><br>
 
 Now, learn to think quickly and with all of your mental ability. To prepare for this H-plus function exercise, move now to make your body comfortable, whatever is best for you.<br>
 이제, 당신의 모든 인지적 능력을 사용하여 빨리 생각하도록 배웁니다. 이 H-plus 기능 연습을 준비하기 위해서는 당신의 몸을 편하도록 조정하십시오. 그게 무엇이든, 당신에게 가장 좋은 자세를<br><br>
 
 You have made sure that you will not be interrupted during this learning period and now, get your body into your most relaxed position.<br>
-이제 이 과정에서 방해받지 않을 확신을 가졌으니, 가장 편한한  <br><br>
+이제 당신은 학습과정에서 방해받지 않을 것 입니다. 가장 편안한 자세를 취하십시오.   <br><br>
 
 Loosen any tight clothing, stretch your arms and legs and let them droop, limp and relaxed. Turn your head slowly from side to side. Breathe easily and deeply.<br>
 옷이 꽉 낀다면 느슨히 풀어주고, 팔과 다리는 축 늘어뜨려 힘을 빼고 이완해주며. 머리를 천천히 돌려보십시오. 깊고 편안하게 호흡하십시오.<br><br>
@@ -24,7 +24,7 @@ Turn now to your security repository box. Raise the heavy lid.<br>
 당신의 **보안 저장 상자(security repository box)**로 향하십시오. 무거운 뚜껑을 여십시오.<br><br>
 
 Place in the box any worries, anxieties and concerns that you may have right at this moment. You don't need them now and they will simply get in the way of your learning process. Do this now.<br>
-상자 안에 지금 이 순간 당신이 가지고 있을지 모르는 모든 걱정, 불안, 근심을 넣으십시오. 지금은 그것들이 필요하지 않으며, 그것들은 단지 당신의 학습 과정을 방해할 뿐입니다. 지금 넣으십시오.<br><br>
+상자 안에 지금 이 순간 당신이 가지고 있을지 모르는 모든 걱정, 불안, 근심을 넣으십시오. 지금 이것들은 필요하지 않습니다. 단지 당신의 학습 과정을 방해할 뿐이니. 지금 넣으십시오.<br><br>
 
 Now, close the lid of your repository box. Close it tightly and turn away. Turn away.<br>
 이제 저장 상자의 뚜껑을 닫으십시오. 단단히 닫고 돌아서십시오. 돌아서십시오.<br><br>
