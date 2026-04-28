@@ -1,6 +1,5 @@
 <!-- _includes/2048_game.html -->
 <style>
-  /* ── Wrapper ─────────────────────────────────────────────────────── */
   .t2048 {
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
     max-width: 440px;
@@ -8,29 +7,13 @@
     padding: 0 1rem;
     color: var(--clr-fg, #c8c8c8);
     user-select: none;
-    position: relative;
   }
 
-  /* CRT scanlines */
-  .t2048::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(
-      to bottom,
-      transparent 0px, transparent 3px,
-      rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
-    );
-    pointer-events: none;
-    z-index: 9999;
-  }
-
-  /* ── Toolbar ─────────────────────────────────────────────────────── */
   .t2048-bar {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    margin-bottom: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   .t2048-line {
@@ -83,133 +66,64 @@
   .t2048-newbtn:hover     { color: var(--clr-accent, #e8e8e8); }
   .t2048-newbtn:hover .tp { color: var(--clr-muted,  #666);    }
 
-  /* ── Grid ────────────────────────────────────────────────────────── */
+  /* ── Board: pure text, no decoration ── */
   .g-frame {
     display: flex;
     flex-direction: column;
-    gap: 6px;           /* breathing room between rows */
     touch-action: none;
   }
 
   .g-row {
     display: flex;
-    gap: 6px;
   }
 
-  /* ── Cell — corner-bracket design ───────────────────────────────────
-     Instead of a full border, only the four corners are drawn.
-     --c  : corner color   (fades up with value)
-     --s  : corner arm length
-     All 8 lines (2 per corner × 4 corners) are CSS background gradients.
-  ──────────────────────────────────────────────────────────────────── */
   .g-cell {
     flex: 1;
-    aspect-ratio: 1;
-    min-height: 72px;
+    height: 4.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
     font-weight: 700;
-    font-size: clamp(0.9rem, 5vw, 1.5rem);
-
-    color: transparent;   /* empty cells show nothing */
-    transition: color 0.12s, text-shadow 0.12s;
-
-    /* Corner bracket variables */
-    --c: rgba(255,255,255,0.07);
-    --s: 10px;
-
-    background-image:
-      /* top-left */
-      linear-gradient(var(--c), var(--c)),
-      linear-gradient(var(--c), var(--c)),
-      /* top-right */
-      linear-gradient(var(--c), var(--c)),
-      linear-gradient(var(--c), var(--c)),
-      /* bottom-left */
-      linear-gradient(var(--c), var(--c)),
-      linear-gradient(var(--c), var(--c)),
-      /* bottom-right */
-      linear-gradient(var(--c), var(--c)),
-      linear-gradient(var(--c), var(--c));
-    background-size:
-      var(--s) 1px,  1px var(--s),
-      var(--s) 1px,  1px var(--s),
-      var(--s) 1px,  1px var(--s),
-      var(--s) 1px,  1px var(--s);
-    background-position:
-      top left,    top left,
-      top right,   top right,
-      bottom left, bottom left,
-      bottom right,bottom right;
-    background-repeat: no-repeat;
-    background-color: transparent;
+    font-size: clamp(0.85rem, 4.5vw, 1.35rem);
+    background: none;
+    border: none;
+    border-radius: 0;
+    color: transparent;
+    transition: color 0.1s, text-shadow 0.1s;
+    position: relative;
   }
 
-  /* ── Value levels: corner brightness + text brightness + glow ──── */
-  .g-cell[data-value]      { --s: 12px; }   /* bigger ticks when occupied */
+  /* middle dot for empty cells */
+  .g-cell:not([data-value])::after {
+    content: '·';
+    color: rgba(255,255,255,0.10);
+    font-weight: 400;
+    position: absolute;
+  }
 
-  .g-cell[data-value="2"]  {
-    --c  : rgba(255,255,255,0.18);
-    color: rgba(255,255,255,0.30);
-  }
-  .g-cell[data-value="4"]  {
-    --c  : rgba(255,255,255,0.25);
-    color: rgba(255,255,255,0.45);
-  }
-  .g-cell[data-value="8"]  {
-    --c  : rgba(255,255,255,0.33);
-    color: rgba(255,255,255,0.60);
-  }
-  .g-cell[data-value="16"] {
-    --c  : rgba(255,255,255,0.42);
-    color: rgba(255,255,255,0.72);
-  }
-  .g-cell[data-value="32"] {
-    --c  : rgba(255,255,255,0.52);
-    color: rgba(255,255,255,0.84);
-  }
-  .g-cell[data-value="64"] {
-    --c  : rgba(255,255,255,0.62);
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.28);
-  }
-  .g-cell[data-value="128"] {
-    --c  : rgba(255,255,255,0.72);
-    color: #fff;
-    text-shadow: 0 0 14px rgba(255,255,255,0.48);
-  }
-  .g-cell[data-value="256"] {
-    --c  : rgba(255,255,255,0.82);
-    color: #fff;
-    text-shadow: 0 0 18px rgba(255,255,255,0.62);
-  }
-  .g-cell[data-value="512"] {
-    --c  : rgba(255,255,255,0.90);
-    color: #fff;
-    text-shadow: 0 0 22px rgba(255,255,255,0.78);
-  }
+  .g-cell[data-value="2"]    { color: rgba(255,255,255,0.28); }
+  .g-cell[data-value="4"]    { color: rgba(255,255,255,0.42); }
+  .g-cell[data-value="8"]    { color: rgba(255,255,255,0.56); }
+  .g-cell[data-value="16"]   { color: rgba(255,255,255,0.67); }
+  .g-cell[data-value="32"]   { color: rgba(255,255,255,0.78); }
+  .g-cell[data-value="64"]   { color: rgba(255,255,255,0.88); }
+  .g-cell[data-value="128"]  { color: #fff; }
+  .g-cell[data-value="256"]  { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.40); }
+  .g-cell[data-value="512"]  { color: #fff; text-shadow: 0 0 18px rgba(255,255,255,0.58); }
   .g-cell[data-value="1024"] {
-    --c  : rgba(255,255,255,0.96);
-    --s  : 14px;
     color: #fff;
-    text-shadow: 0 0 28px #fff, 0 0 8px rgba(255,255,255,0.50);
-    font-size: clamp(0.72rem, 3.8vw, 1.15rem);
+    text-shadow: 0 0 24px rgba(255,255,255,0.75);
+    font-size: clamp(0.7rem, 3.6vw, 1.1rem);
   }
   .g-cell[data-value="2048"] {
-    --c  : #fff;
-    --s  : 14px;
     color: #fff;
-    text-shadow: 0 0 36px #fff, 0 0 60px rgba(255,255,255,0.35);
-    font-size: clamp(0.72rem, 3.8vw, 1.15rem);
+    text-shadow: 0 0 32px #fff, 0 0 60px rgba(255,255,255,0.30);
+    font-size: clamp(0.7rem, 3.6vw, 1.1rem);
   }
 </style>
 
 <div class="t2048">
-
-  <!-- Toolbar -->
   <div class="t2048-bar">
     <div class="t2048-line">
       <span class="tp">&gt;</span>
@@ -232,7 +146,6 @@
     </div>
   </div>
 
-  <!-- Game grid -->
   <div class="g-frame" style="touch-action: none;">
     <div class="g-row">
       <div class="g-cell" id="r1c1"></div>
@@ -259,78 +172,53 @@
       <div class="g-cell" id="r4c4"></div>
     </div>
   </div>
-
 </div>
 
 <script src="{{ '/assets/script/2048.min.js' | relative_url }}" onload="init();"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-
-    // ── 1. Highest score (localStorage) ────────────────────────────
     const scoreEl   = document.getElementById('score');
     const highestEl = document.getElementById('highest');
 
     const saved = parseInt(localStorage.getItem('2048_highest')) || 0;
     highestEl.innerText = saved;
 
-    const scoreObserver = new MutationObserver(function () {
+    new MutationObserver(function () {
       const cur  = parseInt(scoreEl.innerText)   || 0;
       const high = parseInt(highestEl.innerText) || 0;
       if (cur > high) {
         highestEl.innerText = cur;
         localStorage.setItem('2048_highest', cur);
       }
-    });
+    }).observe(scoreEl, { childList: true, characterData: true, subtree: true });
 
-    if (scoreEl) {
-      scoreObserver.observe(scoreEl, { childList: true, characterData: true, subtree: true });
-    }
-
-    // ── 2. data-value on cells → CSS corner-bracket levels ─────────
     document.querySelectorAll('.g-cell').forEach(function (cell) {
       new MutationObserver(function () {
         const val = cell.innerText.trim();
-        if (val) {
-          cell.setAttribute('data-value', val);
-        } else {
-          cell.removeAttribute('data-value');
-        }
+        val ? cell.setAttribute('data-value', val)
+            : cell.removeAttribute('data-value');
       }).observe(cell, { childList: true, characterData: true, subtree: true });
     });
 
-    // ── 3. Mobile swipe ─────────────────────────────────────────────
-    const gameFrame = document.querySelector('.g-frame');
-    if (!gameFrame) return;
+    const frame = document.querySelector('.g-frame');
+    if (!frame) return;
 
-    let startX = 0, startY = 0;
+    let sx = 0, sy = 0;
 
-    gameFrame.addEventListener('touchstart', function (e) {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
+    frame.addEventListener('touchstart', function (e) {
+      sx = e.touches[0].clientX;
+      sy = e.touches[0].clientY;
     }, { passive: false });
 
-    gameFrame.addEventListener('touchend', function (e) {
-      if (!startX || !startY) return;
-
-      const diffX = startX - e.changedTouches[0].clientX;
-      const diffY = startY - e.changedTouches[0].clientY;
-
-      if (Math.abs(diffX) < 30 && Math.abs(diffY) < 30) return;
-
-      let keyCode;
-      if (Math.abs(diffX) > Math.abs(diffY)) {
-        keyCode = diffX > 0 ? 37 : 39;  // Left : Right
-      } else {
-        keyCode = diffY > 0 ? 38 : 40;  // Up   : Down
-      }
-
-      document.dispatchEvent(new KeyboardEvent('keydown', { keyCode, which: keyCode }));
-      document.dispatchEvent(new KeyboardEvent('keyup',   { keyCode, which: keyCode }));
-
-      startX = 0;
-      startY = 0;
+    frame.addEventListener('touchend', function (e) {
+      const dx = sx - e.changedTouches[0].clientX;
+      const dy = sy - e.changedTouches[0].clientY;
+      if (Math.abs(dx) < 30 && Math.abs(dy) < 30) return;
+      const k = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 37 : 39) : (dy > 0 ? 38 : 40);
+      document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: k, which: k }));
+      document.dispatchEvent(new KeyboardEvent('keyup',   { keyCode: k, which: k }));
+      sx = sy = 0;
     });
-
   });
 </script>
