@@ -1,44 +1,311 @@
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ site.baseurl }}/assets/css/2048.css" />
-<div class="g-tool-bar">
-  <div class="g-tool-bar-item">
-    <span>Score:</span>
-    <span id="score"></span>
+<!-- _includes/2048_game.html -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+  /* ── Wrapper ─────────────────────────────────────────────────────── */
+  .t2048 {
+    font-family: 'JetBrains Mono', monospace;
+    max-width: 440px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: #c8c8c8;
+    user-select: none;
+    position: relative;
+  }
+
+  /* CRT scanlines — sits over everything */
+  .t2048::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.07) 3px,
+      rgba(0, 0, 0, 0.07) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Toolbar ─────────────────────────────────────────────────────── */
+  .t2048-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 1.6rem;
+  }
+
+  .t2048-bar-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    line-height: 1.9;
+  }
+
+  .tp  { color: #3a3a3a; }   /* prompt > */
+  .tlb { color: #666;    }   /* label    */
+  .tsp { color: #2e2e2e; }   /* separator */
+  .tvl {
+    color: #d8d8d8;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    min-width: 3ch;
+  }
+
+  /* blinking block cursor */
+  .t-cur {
+    display: inline-block;
+    width: 7px;
+    height: 0.78em;
+    background: #c8c8c8;
+    vertical-align: middle;
+    margin-left: 1px;
+    animation: t-blink 1.1s step-end infinite;
+  }
+  @keyframes t-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* new game button */
+  .t2048-newbtn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #3a3a3a;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+    margin-top: 6px;
+  }
+  .t2048-newbtn .tp { transition: color 0.2s; }
+  .t2048-newbtn:hover       { color: #c8c8c8; }
+  .t2048-newbtn:hover .tp   { color: #666;    }
+
+  /* ── Grid ────────────────────────────────────────────────────────── */
+  .g-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.09);
+    padding: 1px;
+    touch-action: none;
+  }
+
+  .g-row {
+    display: flex;
+    gap: 1px;
+  }
+
+  .g-cell {
+    flex: 1;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0d0d0d;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 5vw, 1.55rem);
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.0);   /* empty = invisible */
+    transition: color 0.12s, text-shadow 0.12s, border 0.12s, background 0.12s;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    min-height: 72px;
+  }
+
+  /* ── Value-driven visual weight ───────────────────────────────────
+     data-value is set by MutationObserver below.
+     Pattern: higher value → brighter + more glow + brighter border.
+  ──────────────────────────────────────────────────────────────── */
+  .g-cell[data-value="2"]    {
+    color: rgba(255,255,255,0.32);
+  }
+  .g-cell[data-value="4"]    {
+    color: rgba(255,255,255,0.48);
+  }
+  .g-cell[data-value="8"]    {
+    color: rgba(255,255,255,0.62);
+    border-color: rgba(255,255,255,0.10);
+  }
+  .g-cell[data-value="16"]   {
+    color: rgba(255,255,255,0.74);
+    border-color: rgba(255,255,255,0.14);
+  }
+  .g-cell[data-value="32"]   {
+    color: rgba(255,255,255,0.84);
+    border-color: rgba(255,255,255,0.20);
+  }
+  .g-cell[data-value="64"]   {
+    color: #fff;
+    border-color: rgba(255,255,255,0.28);
+    text-shadow: 0 0 10px rgba(255,255,255,0.30);
+  }
+  .g-cell[data-value="128"]  {
+    color: #fff;
+    border-color: rgba(255,255,255,0.40);
+    text-shadow: 0 0 14px rgba(255,255,255,0.50);
+    background: rgba(255,255,255,0.02);
+  }
+  .g-cell[data-value="256"]  {
+    color: #fff;
+    border-color: rgba(255,255,255,0.55);
+    text-shadow: 0 0 18px rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.03);
+  }
+  .g-cell[data-value="512"]  {
+    color: #fff;
+    border-color: rgba(255,255,255,0.72);
+    text-shadow: 0 0 22px rgba(255,255,255,0.78);
+    background: rgba(255,255,255,0.05);
+  }
+  .g-cell[data-value="1024"] {
+    color: #fff;
+    border-color: rgba(255,255,255,0.88);
+    text-shadow: 0 0 28px #fff, 0 0 8px rgba(255,255,255,0.50);
+    background: rgba(255,255,255,0.07);
+    font-size: clamp(0.72rem, 3.8vw, 1.2rem);
+  }
+  .g-cell[data-value="2048"] {
+    color: #fff;
+    border-color: #fff;
+    text-shadow: 0 0 36px #fff, 0 0 60px rgba(255,255,255,0.40);
+    background: rgba(255,255,255,0.10);
+    font-size: clamp(0.72rem, 3.8vw, 1.2rem);
+  }
+</style>
+
+<div class="t2048">
+
+  <!-- Toolbar -->
+  <div class="t2048-bar">
+    <div class="t2048-bar-line">
+      <span class="tp">&gt;</span>
+      <span class="tlb">score</span>
+      <span class="tsp">:</span>
+      <span id="score" class="tvl">0</span>
+      <span class="t-cur"></span>
+    </div>
+    <div class="t2048-bar-line">
+      <span class="tp">&gt;</span>
+      <span class="tlb">highest</span>
+      <span class="tsp">:</span>
+      <span id="highest" class="tvl">0</span>
+    </div>
+    <div class="t2048-bar-line">
+      <button class="t2048-newbtn" onclick="new_game();">
+        <span class="tp">&gt;</span>
+        <span>new_game()</span>
+      </button>
+    </div>
   </div>
-  <div class="g-tool-bar-item">
-    <span>Highest:</span>
-    <span id="highest"></span>
+
+  <!-- Game grid — IDs/classes kept for 2048.min.js compatibility -->
+  <div class="g-frame" style="touch-action: none;">
+    <div class="g-row">
+      <div class="g-cell" id="r1c1"></div>
+      <div class="g-cell" id="r1c2"></div>
+      <div class="g-cell" id="r1c3"></div>
+      <div class="g-cell" id="r1c4"></div>
+    </div>
+    <div class="g-row">
+      <div class="g-cell" id="r2c1"></div>
+      <div class="g-cell" id="r2c2"></div>
+      <div class="g-cell" id="r2c3"></div>
+      <div class="g-cell" id="r2c4"></div>
+    </div>
+    <div class="g-row">
+      <div class="g-cell" id="r3c1"></div>
+      <div class="g-cell" id="r3c2"></div>
+      <div class="g-cell" id="r3c3"></div>
+      <div class="g-cell" id="r3c4"></div>
+    </div>
+    <div class="g-row">
+      <div class="g-cell" id="r4c1"></div>
+      <div class="g-cell" id="r4c2"></div>
+      <div class="g-cell" id="r4c3"></div>
+      <div class="g-cell" id="r4c4"></div>
+    </div>
   </div>
-  <div class="g-tool-bar-item">
-    <a class="g-tool-bottom" onclick="new_game();">New Game</a>
-  </div>
+
 </div>
-<div class="g-frame">
-  <div class="g-row">
-    <div class="g-cell" id="r1c1">1</div>
-    <div class="g-cell" id="r1c2"></div>
-    <div class="g-cell" id="r1c3"></div>
-    <div class="g-cell" id="r1c4"></div>
-  </div>
-  <div class="g-row">
-    <div class="g-cell" id="r2c1"></div>
-    <div class="g-cell" id="r2c2"></div>
-    <div class="g-cell" id="r2c3"></div>
-    <div class="g-cell" id="r2c4"></div>
-  </div>
-  <div class="g-row">
-    <div class="g-cell" id="r3c1"></div>
-    <div class="g-cell" id="r3c2"></div>
-    <div class="g-cell" id="r3c3"></div>
-    <div class="g-cell" id="r3c4"></div>
-  </div>
-  <div class="g-row">
-    <div class="g-cell" id="r4c1"></div>
-    <div class="g-cell" id="r4c2"></div>
-    <div class="g-cell" id="r4c3"></div>
-    <div class="g-cell" id="r4c4"></div>
-  </div>
-</div>
-<script src="{{ site.baseurl }}/assets/script/2048.min.js" onload="init();"></script>
+
+<script src="{{ '/assets/script/2048.min.js' | relative_url }}" onload="init();"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // ── 1. Highest score (localStorage) ────────────────────────────
+    const scoreEl   = document.getElementById('score');
+    const highestEl = document.getElementById('highest');
+
+    const saved = parseInt(localStorage.getItem('2048_highest')) || 0;
+    highestEl.innerText = saved;
+
+    const scoreObserver = new MutationObserver(function () {
+      const cur  = parseInt(scoreEl.innerText)   || 0;
+      const high = parseInt(highestEl.innerText) || 0;
+      if (cur > high) {
+        highestEl.innerText = cur;
+        localStorage.setItem('2048_highest', cur);
+      }
+    });
+
+    if (scoreEl) {
+      scoreObserver.observe(scoreEl, { childList: true, characterData: true, subtree: true });
+    }
+
+    // ── 2. data-value on cells → CSS glow levels ───────────────────
+    document.querySelectorAll('.g-cell').forEach(function (cell) {
+      new MutationObserver(function () {
+        const val = cell.innerText.trim();
+        if (val) {
+          cell.setAttribute('data-value', val);
+        } else {
+          cell.removeAttribute('data-value');
+        }
+      }).observe(cell, { childList: true, characterData: true, subtree: true });
+    });
+
+    // ── 3. Mobile swipe ─────────────────────────────────────────────
+    const gameFrame = document.querySelector('.g-frame');
+    if (!gameFrame) return;
+
+    let startX = 0, startY = 0;
+
+    gameFrame.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    }, { passive: false });
+
+    gameFrame.addEventListener('touchend', function (e) {
+      if (!startX || !startY) return;
+
+      const diffX = startX - e.changedTouches[0].clientX;
+      const diffY = startY - e.changedTouches[0].clientY;
+
+      if (Math.abs(diffX) < 30 && Math.abs(diffY) < 30) return;
+
+      let keyCode;
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        keyCode = diffX > 0 ? 37 : 39;  // Left : Right
+      } else {
+        keyCode = diffY > 0 ? 38 : 40;  // Up   : Down
+      }
+
+      document.dispatchEvent(new KeyboardEvent('keydown', { keyCode, which: keyCode }));
+      document.dispatchEvent(new KeyboardEvent('keyup',   { keyCode, which: keyCode }));
+
+      startX = 0;
+      startY = 0;
+    });
+
+  });
+</script>
